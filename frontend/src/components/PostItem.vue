@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-    import TheAvatar from './TheAvatar.vue';
+    import TheAvatar from './TheAvatar.vue';//頭像組件
     import PostAcitons from './PostAcitons.vue';
 
     defineProps(['number']);

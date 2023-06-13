@@ -2,20 +2,22 @@
     <nav class="navbar">
         <router-link to="/"><img src="../assets/logo.svg" /></router-link>
         <div class="searchInput">
-            <input type="text"/>
+            <input type="text" />
             <TheIcon icon="search" />
         </div>
         <div class="navItems">
             <router-link to="/">
                 <TheIcon icon="home" />
             </router-link>
-            <button >
+            <button>
                 <TheIcon icon="publish" />
             </button>
-            
+
             <!-- dropdown -->
             <div class="profileDropDown">
-                <TheAvatar :width="42" :height="42" style="cursor: pointer;"/>
+                <router-link to="/profile">
+                    <TheAvatar :width="42" :height="42" style="cursor: pointer;" />
+                </router-link>
                 <!-- <div class="dropdownMenu">
                     <ul class="profileMenu">
                         <li><router-link to="/profile">个人主页</router-link></li>

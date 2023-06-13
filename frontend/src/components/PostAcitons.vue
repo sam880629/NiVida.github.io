@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import TheIcon from "./TheIcon.vue";
+import TheIcon from "../components/TheIcon.vue";
 </script>
 
 <style scoped>

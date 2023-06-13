@@ -13,7 +13,7 @@
                         <TheAvatar />
                         <span class="user">Alex</span>
                         <span class="commentDate">id</span>
-                        <p class="commentContent">讚讚!!</p>
+                        <p class="commentContent">讚讚!</p>
                     </div>
                 </div>
                 <div class="actions">

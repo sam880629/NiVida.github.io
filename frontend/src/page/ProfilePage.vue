@@ -9,9 +9,7 @@
                 </p>
                 <p class="handle">@Rong_Ding</p>
                 <div class="description">
-                    <pre>
-                熱愛生活 從生活中發現藝術
-            </pre>
+                    <pre> 熱愛生活 從生活中發現藝術 </pre>
                 </div>
                 <a href="https://github.com/sam880629" class="website">https://github.com/sam880629</a>
             </div>

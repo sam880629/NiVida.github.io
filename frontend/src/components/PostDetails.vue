@@ -4,13 +4,13 @@
             <img class="postImage" :src="ImgSrc ">
             <div class="postMeta">
                 <div class="author">
-                    <TheAvatar />
+                    <TheAvatar :src="renderuserHeadshot(store.state.id)"/>
                     <span>{{ comment.name }}</span>
                 </div>
                 <pre class="postDesc">{{ comment.content}}</pre>
                 <div class="comments">
                     <div class="comment" v-for="n in comment.Comment.length">
-                        <TheAvatar />
+                        <TheAvatar :src="renderuserHeadshot(comment.Comment[n-1].id)"/>
                         <span class="user">{{ comment.Comment[n-1].name }}</span>
                         <!-- <span class="commentDate">id</span> -->
                         <p class="commentContent">{{ comment.Comment[n-1].content }}</p>
@@ -39,7 +39,12 @@ const store = useStore();
 // 各個用戶的資訊
 const comment = computed(() => store.state.comment.user[store.state.id-1]);
 //更改當前圖片
-const ImgSrc = computed(()=> store.getters.changeImageSrc) 
+const ImgSrc = computed(()=> store.getters.changeImageSrc);
+//用戶大頭貼更新
+
+function renderuserHeadshot(n){
+    return `src/assets/user/${n}.jpg`
+}
 
 </script>
 
@@ -89,6 +94,7 @@ const ImgSrc = computed(()=> store.getters.changeImageSrc)
     align-items: start;
     overflow-y: auto;
     height: 100%;
+    margin-top: 20px;
 }
 
 .comment {

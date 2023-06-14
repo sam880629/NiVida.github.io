@@ -2,6 +2,7 @@ import { createStore } from  'vuex';
 import { user } from "./user/index";
 import { post } from "./post/index";
 import { comment } from './comment/index';
+
 export const store = createStore({
     modules:{
         user, post, comment
@@ -29,6 +30,7 @@ export const store = createStore({
         //生成文章圖片
         getImgSrc(state){
             return `https://picsum.photos/id/${state.number}/1200/1200`
-        }
+        },
+       
     }
 });

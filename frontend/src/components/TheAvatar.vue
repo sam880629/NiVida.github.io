@@ -4,7 +4,6 @@
 
 <script setup>
 import defaultAvatar from '../assets/avatarDefault.png'
-import { computed } from 'vue';
 
   const props =   defineProps({
         src: String,

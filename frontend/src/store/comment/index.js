@@ -10,11 +10,13 @@ export const comment = {
                     time: '11',
                     Comment: [
                         {
-                            name: 'Emily',
-                            content: 'Great job!',
+                            id:3,
+                            name: 'Alice',
+                            content: '👍🏼👍🏼👍🏼',
                         },
                         {
-                            name: 'Alex',
+                            id:5,
+                            name: 'David',
                             content: 'good',
                         }
 
@@ -28,7 +30,8 @@ export const comment = {
                     like: '10',
                     time: '8',
                     Comment: [{
-                        name: 'Emily',
+                        id: 3,
+                        name: 'Alice',
                         content: '❤️超美的啦!!',
                     }]
                     ,
@@ -41,7 +44,8 @@ export const comment = {
                     like: '5',
                     time: '4',
                     Comment: [{
-                        name: 'Bob',
+                        id: 1,
+                        name: 'Sam',
                         content: '好好享受大自然~~😊',
                     }],
                     star: '2',
@@ -54,16 +58,19 @@ export const comment = {
                     time: '9',
                     Comment: [
                         {
-                        name: 'Michael',
+                        id:5,
+                        name: 'David',
                         content: 'I love it!',
                     },
-                    {
-                        name: 'Alex',
+                    {   
+                        id:5,
+                        name: 'David',
                         content: 'good',
                     }, 
-                    {
-                        name: 'Bob',
-                        content: 'Nice work',
+                    {   
+                        id:3,
+                        name: 'Alice',
+                        content: 'Nice😍',
                     }
                 ],
                     star: '8',
@@ -75,8 +82,9 @@ export const comment = {
                     like: '15',
                     time: '6',
                     Comment: [{
-                        name: 'Jessica',
-                        content: 'Impressive',
+                        id:6,
+                        name: 'Emmaa',
+                        content: '😍😍😍',
                     }],
                     star: '4',
                 },
@@ -87,8 +95,14 @@ export const comment = {
                     like: '2',
                     time: '22',
                     Comment: [{
-                        name: 'Daniel',
-                        content: 'Let me assist you',
+                        id:3,
+                        name: 'Alice',
+                        content: '有機會一起去!!',
+                    },
+                    {
+                        id:1,
+                        name: 'Sam',
+                        content: 'GOOD!!',
                     }],
                     star: '1',
                 }

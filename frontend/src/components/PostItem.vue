@@ -27,7 +27,7 @@
     const comment = computed(() => store.state.comment.user[props.number-1]);
     //開啟詳細視窗 
     const openPostShow = ( payload ) => store.commit('changePostShow', {show:true, id:props.number});
- 
+    //用戶大頭貼更新
     const userHeadshot = computed(()=> `src/assets/user/${props.number}.jpg`)
 
      // 隨機圖片生成

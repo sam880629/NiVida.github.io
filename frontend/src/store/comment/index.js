@@ -109,6 +109,13 @@ export const comment = {
             ],
         };
     },
-    mutations: {},
+    mutations: {
+        // 新增評論
+        createComment(){
+            alert('okkkk')
+        }
+
+
+    },
     actions: {},
 };

@@ -12,7 +12,6 @@
                     <div class="comment" v-for="n in comment.Comment.length">
                         <TheAvatar :src="renderuserHeadshot(comment.Comment[n-1].id)"/>
                         <span class="user">{{ comment.Comment[n-1].name }}</span>
-                        <!-- <span class="commentDate">id</span> -->
                         <p class="commentContent">{{ comment.Comment[n-1].content }}</p>
                     </div>
                 </div>
@@ -20,7 +19,7 @@
                     <PostAcitons :comment="comment"/>
                     <span class="postPubDate">{{ comment.time }}h</span>
                     <input type="text" name="comment" id="" class="commentInput" placeholder="寫一條評論吧!">
-                    <button class="commentPubBtn">送出</button>
+                    <button class="commentPubBtn" @click="store.commit('createComment')">送出</button>
                 </div>
             </div>
         </div>
@@ -41,7 +40,6 @@ const comment = computed(() => store.state.comment.user[store.state.id-1]);
 //更改當前圖片
 const ImgSrc = computed(()=> store.getters.changeImageSrc);
 //用戶大頭貼更新
-
 function renderuserHeadshot(n){
     return `src/assets/user/${n}.jpg`
 }

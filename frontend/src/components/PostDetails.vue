@@ -18,7 +18,7 @@
                 </div>
                 <div class="actions">
                     <PostAcitons :comment="comment"/>
-                    <span class="postPubDate">12h</span>
+                    <span class="postPubDate">{{ comment.time }}h</span>
                     <input type="text" name="comment" id="" class="commentInput" placeholder="寫一條評論吧!">
                     <button class="commentPubBtn">送出</button>
                 </div>

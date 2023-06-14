@@ -4,9 +4,9 @@
 
 <script setup>
 import defaultAvatar from '../assets/avatarDefault.png'
+import { computed } from 'vue';
 
-
-    defineProps({
+  const props =   defineProps({
         src: String,
         width:{
             type: Number,
@@ -16,7 +16,7 @@ import defaultAvatar from '../assets/avatarDefault.png'
             type: Number,
             default: 34,
         }
-    });
+    },'number');
 
 </script>
 
@@ -27,6 +27,6 @@ import defaultAvatar from '../assets/avatarDefault.png'
         border-radius: 50%;
         background: #eee;
         object-fit:  cover;
-        object-position: top center;
+        object-position:  center;
     }
 </style>

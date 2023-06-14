@@ -3,9 +3,9 @@
                 <img  :src="getImgSrc(number+11)"  width="100%" height="100%" style="background: #eee;"  @click="openPostShow" />
                 <div class="postInfo">
                     <div class="postMeta">
-                        <TheAvatar />
+                        <TheAvatar :src="userHeadshot"/>
                         <span>{{ comment.name }}</span>
-                        <span class="postPubDate">12小時之前發布</span>
+                        <span class="postPubDate">{{comment.time}}小時之前發布</span>
                         <PostAcitons :comment="comment"/>
                     </div>
                     <div class="postDesc">
@@ -28,7 +28,8 @@
     //開啟詳細視窗 
     const openPostShow = ( payload ) => store.commit('changePostShow', {show:true, id:props.number});
  
-    
+    const userHeadshot = computed(()=> `src/assets/user/${props.number}.jpg`)
+
      // 隨機圖片生成
     function getImgSrc(n){
         return `https://picsum.photos/id/${n}/1200/1200`

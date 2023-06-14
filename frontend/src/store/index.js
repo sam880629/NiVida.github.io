@@ -9,7 +9,7 @@ export const store = createStore({
     state(){
         return {
             showPostDetails : false,//是否彈出詳細視窗
-            id : null,//各個id
+            id : 1,//各個id
             number: null,
         }
     },
@@ -17,14 +17,14 @@ export const store = createStore({
          //彈出視窗
          changePostShow(state, payload){
             state.showPostDetails = payload.show;
-            state.id = payload.id+11
+            state.id = payload.id
         }
     },
     actions: {},
     getters: {
         //改變彈跳視窗對應的圖片
         changeImageSrc(state){
-            return `https://picsum.photos/id/${state.id}/1200/1200`
+            return `https://picsum.photos/id/${state.id+11}/1200/1200`
         },
         //生成文章圖片
         getImgSrc(state){

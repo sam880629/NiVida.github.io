@@ -18,7 +18,6 @@ import { useStore, mapMutations } from "vuex";
 const store = useStore();
 //是否顯示詳細視窗
 const showPostDetails = computed(()=> store.state.showPostDetails);
-
 </script>
 
 <style scoped>

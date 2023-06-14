@@ -4,17 +4,12 @@
                 <div class="postInfo">
                     <div class="postMeta">
                         <TheAvatar />
-                        <span>Sam</span>
+                        <span>{{ comment.name }}</span>
                         <span class="postPubDate">12小時之前發布</span>
-                        <PostAcitons/>
+                        <PostAcitons :comment="comment"/>
                     </div>
                     <div class="postDesc">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure rerum, adipisci ipsum magni nisi
-                            animi,
-                            dolorum, ab libero eaque architecto nihil sed repellat earum? Veritatis ex eaque quis saepe
-                            nemo!
-                        </p>
+                        <p>{{ comment.content }}</p>
                     </div>
                 </div>
             </div>
@@ -27,12 +22,12 @@
     import { computed } from 'vue';
     const props = defineProps(['number']);
     const store = useStore();
-    
-    const commentId = computed(() => store.state.comment.user);
-    console.log(commentId);
+
+    // 各個用戶的資訊
+    const comment = computed(() => store.state.comment.user[props.number-1]);
     //開啟詳細視窗 
     const openPostShow = ( payload ) => store.commit('changePostShow', {show:true, id:props.number});
-    
+ 
     
      // 隨機圖片生成
     function getImgSrc(n){

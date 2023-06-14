@@ -1,13 +1,17 @@
 <template>
   <div class="postActions">
-    <TheIcon icon="like" fill="none" stroke="#000000" /><span>1.5w</span>
-    <TheIcon icon="comment" fill="none" stroke="#000000" /><span>1.2w</span>
-    <TheIcon icon="favorite" fill="none" stroke="#000000" /><span>2.2w</span>
+    <TheIcon icon="like" fill="none" stroke="#000000" /><span>{{comment.like}}</span>
+    <TheIcon icon="comment" fill="none" stroke="#000000" /><span>{{ commentSum }}</span>
+    <TheIcon icon="favorite" fill="none" stroke="#000000" /><span>{{ comment.star }}</span>
   </div>
 </template>
 
 <script setup>
 import TheIcon from "../components/TheIcon.vue";
+import { computed } from 'vue';
+const props = defineProps(['comment'])
+// 取得留言的數量
+const commentSum = computed(()=> (props.comment.Comment).length)
 </script>
 
 <style scoped>

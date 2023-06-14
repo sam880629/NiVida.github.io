@@ -5,19 +5,19 @@
             <div class="postMeta">
                 <div class="author">
                     <TheAvatar />
-                    <span>Sam</span>
+                    <span>{{ comment.name }}</span>
                 </div>
-                <pre class="postDesc">Lorem ipsum dolor sit amet consectetur.</pre>
+                <pre class="postDesc">{{ comment.content}}</pre>
                 <div class="comments">
-                    <div class="comment" v-for="n in 4">
+                    <div class="comment" v-for="n in comment.Comment.length">
                         <TheAvatar />
-                        <span class="user">Alex</span>
+                        <span class="user">{{ comment.Comment[n-1].name }}</span>
                         <!-- <span class="commentDate">id</span> -->
-                        <p class="commentContent">讚讚!</p>
+                        <p class="commentContent">{{ comment.Comment[n-1].content }}</p>
                     </div>
                 </div>
                 <div class="actions">
-                    <PostAcitons />
+                    <PostAcitons :comment="comment"/>
                     <span class="postPubDate">12h</span>
                     <input type="text" name="comment" id="" class="commentInput" placeholder="寫一條評論吧!">
                     <button class="commentPubBtn">送出</button>
@@ -35,6 +35,9 @@ import { computed } from 'vue';
 import { useStore, mapMutations } from "vuex";
 
 const store = useStore();
+
+// 各個用戶的資訊
+const comment = computed(() => store.state.comment.user[store.state.id-1]);
 //更改當前圖片
 const ImgSrc = computed(()=> store.getters.changeImageSrc) 
 

@@ -1,6 +1,6 @@
 <template>
             <div class="postItem">
-                <img  :src="getImgSrc(number+11)"  width="100%" height="100%" style="background: #eee;" />
+                <img  :src="getImgSrc(number+11)"  width="100%" height="100%" style="background: #eee;"  @click="openPostShow" />
                 <div class="postInfo">
                     <div class="postMeta">
                         <TheAvatar />
@@ -21,16 +21,25 @@
 </template>
 
 <script setup>
-    import TheAvatar from './TheAvatar.vue';//頭像組件
+    import TheAvatar from './TheAvatar.vue';
     import PostAcitons from './PostAcitons.vue';
-
-    defineProps(['number']);
-
-    // 隨機圖片生成
+    import { useStore, mapMutations, mapState } from "vuex";
+    import { computed } from 'vue';
+    const props = defineProps(['number']);
+    const store = useStore();
+    
+    const commentId = computed(() => store.state.comment.user);
+    console.log(commentId);
+    //開啟詳細視窗 
+    const openPostShow = ( payload ) => store.commit('changePostShow', {show:true, id:props.number});
+    
+    
+     // 隨機圖片生成
     function getImgSrc(n){
         return `https://picsum.photos/id/${n}/1200/1200`
     }
-    
+
+
     
   
 </script>

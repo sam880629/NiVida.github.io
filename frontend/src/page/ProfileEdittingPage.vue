@@ -26,14 +26,15 @@
         <label for="website">連結:</label>
         <input type="text" />
         <div class="actions">
+            <TheButton type="submit" reverse>確定</TheButton>
             <TheButton type="reset" reverse>取消</TheButton>
-            <TheButton type="submit" reverse>f確定</TheButton>
         </div>
     </form>
 </template>
 
 <script setup>
 import TheAvatar from '../components/TheAvatar.vue';
+import TheButton from '../components/TheButton.vue';
 
 </script>
 

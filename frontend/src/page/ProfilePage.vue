@@ -4,7 +4,7 @@
             <TheAvatar :width="186" :height="186" />
             <div class="profile">
                 <p class="name">
-                    <span>Sam</span>
+                    <span>Dawn</span>
                     <router-link to="/profile/edit">編輯個人資料</router-link>
                 </p>
                 <p class="handle">@Rong_Ding</p>
@@ -30,9 +30,9 @@
         </div>
     </div>
     <div class="tabContent">
-        <p>162篇貼文</p>
+        <p>9篇貼文</p>
         <div class="posts">
-            <img src="https://picsum.photos/id/11/1200/1200" class="postImage" v-for="n in 9">
+            <img :src= getImgSrc(n+11) class="postImage" v-for="n in 9">
         </div>
     </div>
 </template>
@@ -40,7 +40,9 @@
 <script setup>
 import TheAvatar from '../components/TheAvatar.vue';
 import TheIcon from '../components/TheIcon.vue';
-
+function getImgSrc(n){
+        return `https://picsum.photos/id/${n}/1200/1200`
+    }
 </script>
 
 <style scoped>

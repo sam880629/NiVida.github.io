@@ -4,7 +4,7 @@
         <div class="backdrop"></div>
         <div class="modalContent">
           <button class="closeBtn" >
-            <TheIcon icon="close" />
+            <TheIcon icon="close" @click="closePostShow"/>
           </button>
           <slot></slot>
         </div>
@@ -13,6 +13,10 @@
   </template>
 <script setup>
 import TheIcon from './TheIcon.vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+const closePostShow = ( payload )=> store.commit('changePostShow',false)
 </script>
 
 

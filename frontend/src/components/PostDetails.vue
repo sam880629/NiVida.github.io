@@ -1,7 +1,7 @@
 <template>
     <TheModal>
         <div class="postDetails">
-            <img class="postImage">
+            <img class="postImage" :src="ImgSrc ">
             <div class="postMeta">
                 <div class="author">
                     <TheAvatar />
@@ -12,7 +12,7 @@
                     <div class="comment" v-for="n in 4">
                         <TheAvatar />
                         <span class="user">Alex</span>
-                        <span class="commentDate">id</span>
+                        <!-- <span class="commentDate">id</span> -->
                         <p class="commentContent">讚讚!</p>
                     </div>
                 </div>
@@ -31,6 +31,12 @@
 import TheModal from './TheModal.vue';
 import PostAcitons from './PostAcitons.vue';
 import TheAvatar from './TheAvatar.vue';
+import { computed } from 'vue';
+import { useStore, mapMutations } from "vuex";
+
+const store = useStore();
+//更改當前圖片
+const ImgSrc = computed(()=> store.getters.changeImageSrc) 
 
 </script>
 

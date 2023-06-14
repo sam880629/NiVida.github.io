@@ -1,5 +1,14 @@
 export const post = {
-    state(){},
-    mutations: {},
+    state(){
+        return{
+           id: 1,
+        }
+    },
+    mutations: {
+       
+    },
     actions: {},
-}
+    getters:{
+
+    }
+    };

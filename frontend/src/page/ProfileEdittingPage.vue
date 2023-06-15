@@ -27,7 +27,10 @@
         <input type="text" />
         <div class="actions">
             <TheButton type="submit" reverse>確定</TheButton>
-            <TheButton type="reset" reverse>取消</TheButton>
+            <router-link to="/profile" >
+              <TheButton type="reset" reverse>取消</TheButton>
+            </router-link>
+          
         </div>
     </form>
 </template>

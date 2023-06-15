@@ -1,5 +1,5 @@
 <template>
-  <svg>
+  <svg class="icon">
     <use :href="`${sprite}#icon-${icon}`"></use>
   </svg>
 </template>
@@ -11,3 +11,8 @@ defineProps({
   icon: String,
 });
 </script>
+<style scoped>
+ .icon:hover{
+    cursor: pointer;
+ }
+</style>

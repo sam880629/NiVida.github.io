@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import defaultAvatar from '../assets/avatarDefault.png'
+import defaultAvatar from '../assets/user/7.jpg';
 
   const props =   defineProps({
         src: String,

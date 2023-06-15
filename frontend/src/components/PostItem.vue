@@ -6,7 +6,7 @@
                         <TheAvatar :src="userHeadshot"/>
                         <span>{{ comment.name }}</span>
                         <span class="postPubDate">{{comment.time}}小時之前發布</span>
-                        <PostAcitons :comment="comment"/>
+                        <PostAcitons :comment="comment" />
                     </div>
                     <div class="postDesc">
                         <p>{{ comment.content }}</p>
@@ -19,9 +19,10 @@
     import TheAvatar from './TheAvatar.vue';
     import PostAcitons from './PostAcitons.vue';
     import { useStore, mapMutations, mapState } from "vuex";
-    import { computed } from 'vue';
+    import { computed, ref ,provide} from 'vue';
     const props = defineProps(['number']);
     const store = useStore();
+    provide('number',props.number)
 
     // 各個用戶的資訊
     const comment = computed(() => store.state.comment.user[props.number-1]);
@@ -29,7 +30,6 @@
     const openPostShow = ( payload ) => store.commit('changePostShow', {show:true, id:props.number});
     //用戶大頭貼更新
     const userHeadshot = computed(()=> `src/assets/user/${props.number}.jpg`)
-
      // 隨機圖片生成
     function getImgSrc(n){
         return `https://picsum.photos/id/${n}/1200/1200`
@@ -43,8 +43,14 @@
 
 <style scoped>
 .postItem {
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    transition: all 0.3s;
+}
+.postItem:hover {
+    box-shadow: 0px 12px 24px rgba(150,150, 150, 0.8);
+    transform: scale(1.05);
+    transition: all 0.5s;
 }
 
 .postInfo {

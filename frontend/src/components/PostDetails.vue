@@ -18,8 +18,8 @@
                 <div class="actions">
                     <PostAcitons :comment="comment"/>
                     <span class="postPubDate">{{ comment.time }}h</span>
-                    <input type="text" name="comment" id="" class="commentInput" placeholder="寫一條評論吧!">
-                    <button class="commentPubBtn" @click="store.commit('createComment')">送出</button>
+                    <input type="text" name="comment"  class="commentInput" placeholder="寫一條評論吧!" v-model="content">
+                    <button class="commentPubBtn" @click="findArticleID">送出</button>
                 </div>
             </div>
         </div>
@@ -30,15 +30,27 @@
 import TheModal from './TheModal.vue';
 import PostAcitons from './PostAcitons.vue';
 import TheAvatar from './TheAvatar.vue';
-import { computed } from 'vue';
+import { computed,ref } from 'vue';
 import { useStore, mapMutations } from "vuex";
 
 const store = useStore();
 
-// 各個用戶的資訊
+const content = ref('');
+
+//各個用戶的資訊
 const comment = computed(() => store.state.comment.user[store.state.id-1]);
 //更改當前圖片
 const ImgSrc = computed(()=> store.getters.changeImageSrc);
+//傳送評論
+const findArticleID = computed(() => {
+  const handleClick = () => {
+    store.dispatch('findArticleID', content.value);
+    content.value='';
+  };
+  return handleClick;
+});
+ 
+
 //用戶大頭貼更新
 function renderuserHeadshot(n){
     return `src/assets/user/${n}.jpg`
